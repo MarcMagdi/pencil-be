@@ -5,7 +5,8 @@ import { Database } from "./db";
 import Logger from "./utils/Logger";
 
 const app = express();
-const port = 3000;
+const port = process.env.SERVER_PORT || 3000;
+
 app.use(morgan("combined"));
 app.use("/api", routes);
 app.listen(port, () => {
